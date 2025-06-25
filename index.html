@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Subhadip Paul - MERN stack developer and JavaScript enthusiast. View projects, technical skills, and contact info.">
+  <title>Subhadip Paul | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #667eea;
+      --secondary: #764ba2;
+      --bg: #f5f7fa;
+      --text: #333;
+      --card-bg: #fff;
+    }
+
+    body.dark {
+      --bg: #1e1e2f;
+      --text: #f1f1f1;
+      --card-bg: #2a2a40;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s, color 0.4s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2.5rem 1rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: var(--primary);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #eee;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      transform: translateY(40px);
+      opacity: 0;
+    }
+
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    body.dark .card-content p {
+      color: #ccc;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .skill {
+      background: var(--card-bg);
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    .skill:hover {
+      background: var(--primary);
+      color: white;
+      cursor: default;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Subhadip Paul</h1>
+    <p>Web Developer | JavaScript Enthusiast | MERN Stack Explorer | DSA</p>
+    <button class="toggle-btn" id="themeToggleBtn" onclick="toggleMode()">Dark Mode</button>
+    <nav style="display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap;">
+  <a href="https://github.com/subhasou26" target="_blank" rel="noopener" aria-label="GitHub Profile" style="display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;">
+    <svg height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+      -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07
+      -1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12
+      0 0 .67-.21 2.2.82A7.66 7.66 0 0 1 8 4.59c.68.003 1.37.092 2.01.27 
+      1.52-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+      2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 
+      0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+      8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/subhadipp26/" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;">
+    <svg height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 
+      2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7.75 
+      20H4.5v-9h3.25v9zM6.125 9.5C5.004 9.5 4.25 8.746 
+      4.25 7.625S5.004 5.75 6.125 5.75 8 6.504 8 7.625 7.246 9.5 6.125 
+      9.5zm13.875 10.5h-3.25v-4.844c0-1.158-.02-2.648-1.616-2.648-1.618 
+      0-1.867 1.265-1.867 2.57V20h-3.25v-9h3.125v1.23h.045c.435-.824 
+      1.496-1.691 3.08-1.691 3.293 0 3.9 2.17 3.9 4.993V20z"/>
+    </svg>
+    LinkedIn
+  </a>
+  <a href="https://www.linkedin.com/in/subhadipp26/" target="_blank" rel="noopener" aria-label="LinkedIn Profile" style="display: flex; align-items: center; gap: 8px; color: white; text-decoration: none;">
+    <svg height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="m21.469 23.907l-3.595 3.473c-.624.625-1.484.885-2.432.885s-1.807-.26-2.432-.885l-5.776-5.812c-.62-.625-.937-1.537-.937-2.485c0-.952.317-1.812.937-2.432l5.76-5.844c.62-.619 1.5-.859 2.448-.859s1.808.26 2.432.885l3.595 3.473c.687.688 1.823.663 2.536-.052c.708-.713.735-1.848.047-2.536l-3.473-3.511a6.793 6.793 0 0 0-3.261-1.787l3.287-3.333c.688-.687.667-1.823-.047-2.536s-1.849-.735-2.536-.052L4.553 13.968c-1.307 1.312-1.989 3.113-1.989 5.113c0 1.996.683 3.86 1.989 5.168l5.797 5.812c1.307 1.307 3.115 1.937 5.115 1.937c1.995 0 3.801-.683 5.109-1.989l3.479-3.521c.688-.683.661-1.817-.052-2.531s-1.849-.74-2.531-.052zm6.28-6.558H14.218c-.932 0-1.692.801-1.692 1.791c0 .991.76 1.797 1.692 1.797h13.531c.933 0 1.693-.807 1.693-1.797c0-.989-.76-1.791-1.693-1.791z"/>
+    </svg>
+    LinkedIn
+  </a>
+</nav>
+
+
+  </header>
+
+  <section>
+    <h2 class="section-title">About Me</h2>
+    <p style="max-width: 900px; margin: auto; font-size: 1.1rem; text-align: center;">
+     I'm Subhadip Paul, a dedicated and curious full-stack developer who thrives on solving real-world problems through technology. My journey began with crafting small web projects using HTML, CSS, and JavaScript, and has since evolved into building robust full-stack applications using the MERN stack and beyond.
+
+Over time, I’ve worked on a wide range of projects—from a grievance redressal system integrating AI-based image classification, to a Vercel-like deployment platform with Docker, AWS, Kafka, and reverse proxying. I've also ventured into blockchain, real-time systems, and IoT integrations, such as bus tracking and car monitoring using GPS and GSM modules with cloud platforms like Azure and AWS
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Technical Skills</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 800px; margin: auto;">
+      <span class="skill">JAVA</span>
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">MongoDB</span>
+      <span class="skill">REST APIs</span>
+      <span class="skill">kafka</span>
+      <span class="skill">Docker</span>
+      <span class="skill">AWS</span>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="card">
+       
+        <div class="card-content">
+          <h3>Complaint Connecte</h3>
+          <p>A role based grievence management system build using Node.js,html,css,js</p>
+          <a href="https://github.com/subhasou26/grievance_redressal" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+      <div class="card">
+        
+        <div class="card-content">
+          <h3>Deploy Nest</h3>
+          <p>Developed a scalable deployment platform which can host react page in amazon aws.
+           <br> kafka, socket.io, Docker are used in this project.
+          </p>
+          <a href="https://github.com/subhasou26/vercel-clone" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </div>
+      <div class="card">
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      📧 psubhadip2003@gmail.com<br>
+      📞 +91 8170004267
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+      const btn = document.getElementById('themeToggleBtn');
+      btn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
